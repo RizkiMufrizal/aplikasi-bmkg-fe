@@ -27,9 +27,23 @@
         </div>
       </nav>
 
-      <h1>Hello {{nama}}</h1>
-
-      <p>{{dataGempaBumi}}</p>
+      <div class="container-fluid">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{dataGempaBumi.Infogempa.gempa.Dirasakan}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{dataGempaBumi.Infogempa.gempa.Wilayah}}</h6>
+            <p class="card-text">{{dataGempaBumi.Infogempa.gempa.Potensi}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Tanggal {{dataGempaBumi.Infogempa.gempa.Tanggal}}</li>
+            <li class="list-group-item">Jam {{dataGempaBumi.Infogempa.gempa.Jam}}</li>
+            <li class="list-group-item">Lintang {{dataGempaBumi.Infogempa.gempa.Lintang}}</li>
+            <li class="list-group-item">Bujur {{dataGempaBumi.Infogempa.gempa.Bujur}}</li>
+            <li class="list-group-item">Magnitude {{dataGempaBumi.Infogempa.gempa.Magnitude}}</li>
+            <li class="list-group-item">Kedalaman {{dataGempaBumi.Infogempa.gempa.Kedalaman}}</li>
+          </ul>
+        </div>
+      </div>
 
     <script src="web/js/bootstrap.bundle.min.js"></script>
     <script src="web/js/angular.min.js"></script>
