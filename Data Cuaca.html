@@ -27,10 +27,10 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Data Gempa</a>
+                            <a class="nav-link" href="index.html">Data Gempa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Data Cuaca.html">Data Cuaca</a>
+                            <a class="nav-link" href="#">Data Cuaca</a>
                         </li>
                     </ul>
                 </div>
@@ -38,31 +38,30 @@
         </nav>
 
         <div class="container-fluid">
-            <div class="card" style="width: 18rem">
-                <div class="card-body">
-                    <h5 class="card-title">{{dataGempaBumi.Infogempa.gempa.Dirasakan}}</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">
-                        {{dataGempaBumi.Infogempa.gempa.Wilayah}}
-                    </h6>
-                    <p class="card-text">{{dataGempaBumi.Infogempa.gempa.Potensi}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        Tanggal {{dataGempaBumi.Infogempa.gempa.Tanggal}}
-                    </li>
-                    <li class="list-group-item">Jam {{dataGempaBumi.Infogempa.gempa.Jam}}</li>
-                    <li class="list-group-item">
-                        Lintang {{dataGempaBumi.Infogempa.gempa.Lintang}}
-                    </li>
-                    <li class="list-group-item">Bujur {{dataGempaBumi.Infogempa.gempa.Bujur}}</li>
-                    <li class="list-group-item">
-                        Magnitude {{dataGempaBumi.Infogempa.gempa.Magnitude}}
-                    </li>
-                    <li class="list-group-item">
-                        Kedalaman {{dataGempaBumi.Infogempa.gempa.Kedalaman}}
-                    </li>
-                </ul>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Tanggal Jam</th>
+                        <th scope="col">Cuaca</th>
+                        <th scope="col">Suhu</th>
+                        <th scope="col">Kelembapan Udara</th>
+                        <th scope="col">Kecapatan Angin</th>
+                        <th scope="col">Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in dataCuaca">
+                        <td>{{data.datetime}}</td>
+                        <td>{{data.weather_desc}}</td>
+                        <td>{{data.t}} C</td>
+                        <td>{{data.hu}} %</td>
+                        <td>{{data.ws}} km/jam</td>
+                        <td>
+                            <img ng-src="{{data.image}}" class="img-fluid" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <script src="web/js/bootstrap.bundle.min.js"></script>
